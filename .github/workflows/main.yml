@@ -1,0 +1,9 @@
+name: building .net application
+on: [push]
+
+jobs:
+  build_dot_net:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout your source
+      uses: actions/checkout@v3
