@@ -13,6 +13,9 @@ jobs:
       uses: actions/checkout@v3
     - name: print
       run: echo Hello!
+
+    - name: list before build
+      uses: ls -l
     
     - name: Setup Go
       uses: actions/setup-go@v4
@@ -21,3 +24,6 @@ jobs:
 
     - name: Build
       run: go build -o theapp main.go
+
+    - name: list after build
+      uses: ls -l
