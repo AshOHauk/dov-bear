@@ -24,6 +24,3 @@ jobs:
 
     - name: Build
       run: go build -o theapp main.go
-
-    - name: list after build
-      uses: ls -l
