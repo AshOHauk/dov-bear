@@ -7,8 +7,17 @@ on:
 jobs:
   build_dot_net:
     runs-on: ubuntu-latest
+
     steps:
     - name: checkout your source
       uses: actions/checkout@v3
     - name: print
       run: echo Hello!
+    
+    - name: Setup Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.17'
+
+    - name: Build
+      run: go build -o theapp main.go
