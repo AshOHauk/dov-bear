@@ -82,7 +82,7 @@ jobs:
                     "text": "Go",
                     "emoji": true
                   },
-                  "value": "www.google.com",
+                  "value": "go to platform ",
                   "url": "https://www.google.com"
                 }
               }
