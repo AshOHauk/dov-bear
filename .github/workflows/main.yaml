@@ -9,10 +9,6 @@ jobs:
     if: "! startsWith(github.event.head_commit.message, '#NORUN')"
     runs-on: ubuntu-latest
 
-    steps:
-    - name: echo
-      run: echo ${{ github.event.head_commit.message }}
-
     - name: checkout your source
       uses: actions/checkout@v3
 
