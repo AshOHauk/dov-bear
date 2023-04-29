@@ -73,7 +73,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "<repository link>"
+                  "text": "${{ secrets.RAILWAY_URL }}"
                 },
                 "accessory": {
                   "type": "button",
@@ -83,7 +83,7 @@ jobs:
                     "emoji": true
                   },
                   "value": "go to platform ",
-                  "url": "https://www.google.com"
+                  "url": "${{ secrets.RAILWAY_URL }}"
                 }
               }
             ]
