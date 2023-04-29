@@ -33,4 +33,60 @@ jobs:
       uses: bervProject/railway-deploy@main
       with:
         railway_token: ${{ secrets.RAILWAY_TOKEN }}
-        service: "glorious-snails" 
+        service: ${{ secrets.RAILWAY_SERVICE }}
+
+    - name: Send data into Slack
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+        payload: |
+          {
+            "blocks": [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "DIPSA 56 CI/CD Submission"
+                }
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Name:* <MyName>"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Email:* <myemail>"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Matriculation:* <mymatricnumber>"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Repository:* <repository link>"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "<repository link>"
+                },
+                "accessory": {
+                  "type": "button",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Go",
+                    "emoji": true
+                  },
+                  "value": "www.google.com",
+                  "url": "https://www.google.com"
+                }
+              }
+            ]
+          }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
