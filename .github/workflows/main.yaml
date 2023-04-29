@@ -53,15 +53,15 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Name:* <MyName>"
+                    "text": "*Name:* ${{ secrets.FULL_NAME }}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Email:* <myemail>"
+                    "text": "*Email:* ${{ secrets.EMAIL_ADDRESS }}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Matriculation:* <mymatricnumber>"
+                    "text": "*Matriculation:* ${{ secrets.MATRICULATION_NUMBER }}"
                   },
                   {
                     "type": "mrkdwn",
